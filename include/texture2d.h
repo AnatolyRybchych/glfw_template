@@ -22,4 +22,6 @@ GLuint load_texture2d_from_array(void *data, int width, int height, int bytes_pe
 void * read_bmp_file(const char *fileName, SIZE *size, int *bytesPerPixel);
 
 
+void load_textures(const char *const *texture_sources, GLuint *textures, int count);
+
 #endif

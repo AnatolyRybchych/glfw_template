@@ -1,4 +1,4 @@
-objects 				= main.o glad.o shader_program.o shaders.o texture2d.o textures.o gl_camera.o vec_types.o
+objects 				= main.o glad.o shader_program.o shaders.o texture2d.o gl_camera.o vec_types.o window.o scenes.o game_scene.o
 
 
 CC 						= gcc
@@ -44,6 +44,10 @@ $(OBJ_DIR)%.o:./src/%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(EXTERN_INCLUDE) $(compileArgs) -o $@ $+
 
+$(OBJ_DIR)%.o:./src/scenes/%.c
+	@echo $@ : $+
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(EXTERN_INCLUDE) $(compileArgs) -o $@ $+
 
 
 #make args

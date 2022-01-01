@@ -85,3 +85,18 @@ GLuint load_texture2d(char *file, SIZE *img_size, int *bytes_per_pixel)
     free(data);
     return texture;
 }
+
+
+void load_textures(const char *const *texture_sources, GLuint *textures, int count)
+{
+    printf("\ntextures initialization{\n");
+    for (int curr_tex = 0; curr_tex < count; curr_tex++)
+    {
+        textures[curr_tex] = load_texture2d(texture_sources[curr_tex], NULL, NULL);
+
+        printf("\tTextures[%i] :%s\t-> (%i) ", curr_tex, texture_sources[curr_tex], textures[curr_tex]);
+        if(textures[curr_tex]) printf("success\n");
+        else printf("feiled\n");
+    }
+    printf("};\n");
+}
