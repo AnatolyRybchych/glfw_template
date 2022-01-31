@@ -1,6 +1,2 @@
-#c objects
-/build/objects
-#executable
-/build/out/*.exe
 #vscode files
 .vscode
